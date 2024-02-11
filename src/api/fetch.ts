@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { url } from "./host_url"
 import { Page, News, Project, Member } from '../types';
-export function fetchPostData<T>(
-  PostType: string
+export default function main<T>(
+  PostType: "pages" | "project" | "news" | "team"
   //Category?: number
 ) {
   const slug = 'wp-json/wp/v2/';
