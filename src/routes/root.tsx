@@ -1,18 +1,13 @@
-import Loading from '../components/loading';
 import { Page } from '../types';
-import fetchPostData from '../api/fetch';
+import { useOutletContext } from 'react-router-dom';
 
 export default function Root() {
-  const { posts, loading } = fetchPostData<Page[]>('pages');
+  const { pages } = useOutletContext<{ pages: Page[] }>();
 
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (posts) {
+  if (pages) {
     return (
       <>
-        {posts.map((post) => (
+        {pages.map((post) => (
           <div key={post.id}>{post.title.rendered}</div>
         ))}
       </>

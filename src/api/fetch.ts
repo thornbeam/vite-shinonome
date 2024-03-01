@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { url } from "./host_url"
+import { url } from './host_url';
 import { Page, News, Project, Member } from '../types';
 export default function main<T>(
-  PostType: "pages" | "project" | "news" | "team"
-  //Category?: number
+  PostType: 'pages' | 'project' | 'news' | 'team' | 'categories'
 ) {
   const slug = 'wp-json/wp/v2/';
   const endpoint = url + slug;

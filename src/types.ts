@@ -25,3 +25,12 @@ export interface Member extends Post {
   type: 'team';
   categories: number[];
 }
+
+export interface Category {
+  id: number;
+  count: number;
+  link: string;
+  name: string;
+  slug: string;
+  parent: number;
+}
